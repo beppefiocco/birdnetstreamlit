@@ -308,8 +308,8 @@ if daily is False:
                     date_specie = df2.loc[df2['File_Name'] == recording, ['Date', 'Com_Name']]
                     date_dir = date_specie['Date'].values[0]
                     specie_dir = date_specie['Com_Name'].values[0].replace(" ", "_")
-                    st.image('/BirdSongs/Extracted/By_Date/' + date_dir + '/' + specie_dir + '/' + recording + '.png')
-                    st.audio('/BirdSongs/Extracted/By_Date/' + date_dir + '/' + specie_dir + '/' + recording)
+                    st.image('BirdSongs/Extracted/By_Date/' + date_dir + '/' + specie_dir + '/' + recording + '.png')
+                    st.audio('BirdSongs/Extracted/By_Date/' + date_dir + '/' + specie_dir + '/' + recording)
                 except Exception:
                     st.title('RECORDING NOT AVAILABLE :(')
             # try:
@@ -323,7 +323,7 @@ if daily is False:
                     verified = st.radio("Verification", ['True Positive', 'False Positive'])
 
                     if verified == "False Positive":
-                        df_names = pd.read_csv('/BirdNET-Pi/model/labels.txt', delimiter='_', names=['Sci_Name', 'Com_Name'])
+                        df_names = pd.read_csv('BirdNET-Pi/model/labels.txt', delimiter='_', names=['Sci_Name', 'Com_Name'])
                         df_unknown = pd.DataFrame({"Sci_Name": ["UNKNOWN"], "Com_Name": ["UNKNOWN"]})
                         df_names = pd.concat([df_unknown, df_names], ignore_index=True)
                         with cold:
