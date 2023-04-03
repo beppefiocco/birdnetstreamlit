@@ -15,7 +15,7 @@ from sklearn.preprocessing import normalize
 pio.templates.default = "plotly_white"
 
 
-URI_SQLITE_DB = '/BirdNET-Pi/scripts/birds.db'
+URI_SQLITE_DB = 'BirdNET-Pi/scripts/birds.db'
 
 st.set_page_config(layout='wide')
 
